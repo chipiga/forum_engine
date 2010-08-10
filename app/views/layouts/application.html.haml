@@ -1,7 +1,7 @@
 !!!
 %html{:lang => I18n.locale}
   %head
-    / = display_meta_tags :site => 'Forum Engine'
+    = display_meta_tags :site => 'Forum Engine'
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
@@ -15,13 +15,12 @@
   %body.bp.two-col
     #container
       %header#header
-        = link_to image_tag( 'logo.gif', :alt => 'Froum Engine', :class => 'logo' ), root_url
-        = render 'shared/nav/user'
-        = render 'shared/nav/menu' if user_signed_in?
+        / = link_to image_tag( 'logo.gif', :alt => 'Forum Engine', :class => 'logo' ), root_url
+        / = render 'shared/nav/user'
+        / = render 'shared/nav/menu' if user_signed_in?
       %section#content
         = render 'shared/flash', :flash => flash
         = yield
-      %nav#sidebar
-        = render 'layouts/sidebar'
       %footer#footer
-        = render 'layouts/footer'
+        = link_to 'Forum Engine', 'http://github.com/chipiga/forum_engine'
+        &copy; 2010

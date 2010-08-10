@@ -1,0 +1,10 @@
+%h1= title 'Форумы'
+
+= render collection
+
+/ %nav.pagination= will_paginate collection, :container => false
+
+/ - title mt << ' | ' << collection.map(&:tag_list).flatten.uniq[0...3].join(' - ') unless params[:tag]
+/ - description h collection.map(&:title).uniq.join('. ')
+/ - keywords collection.map(&:tag_list).flatten.uniq
+/ - set_meta_tags :reverse => true
