@@ -1,0 +1,9 @@
+%nav#user
+  %ul
+    - if user_signed_in?
+      %li= t('shared.welcome', :user => current_user.username)
+      %li= link_to t('shared.sign_edit'), edit_user_registration_path
+      %li= link_to t('shared.sign_out'), destroy_user_session_path
+    - else
+      %li= link_to t('shared.sign_up'), new_user_registration_path
+      %li= link_to t('shared.sign_in'), new_user_session_path

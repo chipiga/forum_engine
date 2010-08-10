@@ -16,8 +16,8 @@
     #container
       %header#header
         / = link_to image_tag( 'logo.gif', :alt => 'Forum Engine', :class => 'logo' ), root_url
-        / = render 'shared/nav/user'
-        / = render 'shared/nav/menu' if user_signed_in?
+        = render 'shared/nav/user'
+        = render 'shared/nav/menu' if user_signed_in?
       %section#content
         = render 'shared/flash', :flash => flash
         = yield

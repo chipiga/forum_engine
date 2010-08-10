@@ -1,6 +1,11 @@
 ForumEngine::Application.routes.draw do
+  devise_for :users
+
   resources :forums
   resources :topics
+  resources :posts
+
+  root :to => redirect{|p, env| '/forums'} # "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
