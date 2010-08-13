@@ -1,0 +1,10 @@
+@import "compass/utilities/lists/inline-list";
+
+@mixin pipe-delimited-list {
+  @include inline-list;
+  li {
+    &:after {
+      content: " | "; }
+    &:last-child, &.last {
+      &:after {
+        content: ""; } } } }

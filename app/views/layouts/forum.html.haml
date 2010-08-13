@@ -12,15 +12,14 @@
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'
     = javascript_include_tag 'rails', 'application'
     = csrf_meta_tag
-  %body.bp.two-col
-    #container
-      %header#header
-        / = link_to image_tag( 'logo.gif', :alt => 'Forum Engine', :class => 'logo' ), root_url
-        = render 'shared/nav/user'
-        = render 'shared/nav/menu' if user_signed_in?
-      %section#content
-        = render 'shared/flash', :flash => flash
-        = yield
-      %footer#footer
-        = link_to 'Forum Engine', 'http://github.com/chipiga/forum_engine'
-        &copy; 2010
+  %body.bp
+    %header#header
+      = render 'shared/nav/user'
+      = link_to (render 'shared/logo'), root_path, :class => 'logo'
+      = render 'shared/nav/menu' if user_signed_in?
+    %section#content
+      = render 'shared/flash', :flash => flash
+      = yield
+    %footer#footer
+      = link_to 'Forum Engine', 'http://github.com/chipiga/forum_engine'
+      &copy; 2010

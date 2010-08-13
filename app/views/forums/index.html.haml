@@ -1,6 +1,12 @@
 %h1= title 'Forums'
 
-= render collection
+%table
+  %tr
+    %th Forum
+    %th Topics
+    %th Posts
+    %th Activity
+  = render collection
 
 / %nav.pagination= will_paginate collection, :container => false
 

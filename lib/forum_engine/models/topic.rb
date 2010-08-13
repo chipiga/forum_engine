@@ -11,7 +11,7 @@ module ForumEngine
         
         delegate :user, :user=, :to => :first_post
 
-        validates :title, :forum_id, :presence => true
+        validates :title, :forum, :presence => true
 
         scope :ordered, joins(:posts).group('topics.id').order('posts.created_at DESC')
 

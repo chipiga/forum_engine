@@ -1,0 +1,6 @@
+@mixin reset-html5 {
+  section, article, aside, header, footer, nav, dialog, figure {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: left; } }

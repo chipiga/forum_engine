@@ -1,0 +1,57 @@
+@import "blueprint/buttons";
+
+form {
+  input[type=submit] {
+    @include button-colors(#565656, #fff);
+    @include button-button; 
+  }
+}
+
+// for devise
+.alert { @include error; }
+form {
+  p { text-indent: 0!important; }
+
+  .field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table; }
+
+  #error_explanation, #errorExplanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0; }
+
+  #error_explanation h2, #errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+
+  #error_explanation ul li, #errorExplanation ul li {
+    font-size: 12px;
+    list-style: square; }  
+}
+
+//@import "partials/form/formtastic";
+@import "partials/form/formtastic_base";
+//@import "partials/form/skintastic";
+
+form.formtastic {
+  @include stack-form(500px, full);
+//  @include float-form;
+
+  .buttons {
+    .cancel {
+      margin: 10px;
+      @include float-right;
+    }
+  }
+}

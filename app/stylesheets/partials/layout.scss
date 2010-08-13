@@ -1,0 +1,30 @@
+//@import "compass/utilities/lists/horizontal-list";
+@import "partials/inline-list";
+
+@mixin layout {
+  body > * {
+    padding: 10px 10px 10px 20px;
+  }
+
+  header#header {
+    background-color: $blueprint_background_color;
+    nav {
+      ul {
+        @include pipe-delimited-list;
+        margin: 10px;
+      }
+    }
+    nav#user { @include float-right; }
+    nav#menu { text-align: center; }
+  }
+
+  section#content {
+  }
+
+  footer#footer {
+    text-align: center;
+    padding: 20px 0px;
+    background-color: $blueprint_background_color;
+  }
+
+}

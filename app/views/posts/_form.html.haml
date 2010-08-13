@@ -1,9 +1,6 @@
 = semantic_form_for resource do |form|
   = form.inputs do
-    = form.input :body
-    / TODO topic_id
+    = form.input :body, :label => "Post Reply"
     - if return_url
       = form.input :return_url, :as => :hidden, :value => return_url
-  = form.buttons do
-    = form.commit_button
-    %li.cancel= link_to 'Cancel', resource
+  = form.buttons

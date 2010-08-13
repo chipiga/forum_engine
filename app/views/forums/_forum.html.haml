@@ -1,9 +1,14 @@
-%article
-  %header
+%tr
+  %td
     %h3= link_to forum.name, forum
-  %section= forum.description
-  %footer
-    %aside
-      %time{ :datetime => forum.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
-        = l forum.created_at, :format => :long
-      / = forum.user.username.capitalize
+    %p= forum.description
+  %td= forum.topics_count
+  %td= forum.posts_count
+  %td
+    - last_topic = forum.topics.ordered.first
+    = link_to last_topic.title, last_topic
+    by
+    = last_topic.user.username
+    at
+    %time{ :datetime => last_topic.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
+      = l last_topic.created_at, :format => :long
