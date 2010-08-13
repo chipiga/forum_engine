@@ -1,0 +1,5 @@
+%h1= title 'Topics'
+
+= render collection
+
+%nav.pagination= will_paginate collection, :container => false

@@ -1,0 +1,3 @@
+%h1= resource.title
+= render :partial => 'posts/post', :collection => resource.posts.ordered
+= render :partial => 'posts/form', :locals => { :resource => [resource, Post.new], :return_url => request.fullpath }

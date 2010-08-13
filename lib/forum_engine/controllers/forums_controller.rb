@@ -5,6 +5,9 @@ module ForumEngine
 
       included do
         respond_to :html
+
+        include ForumEngine::Controllers::Auth
+        include ForumEngine::Controllers::Slug
       end
 
       module InstanceMethods

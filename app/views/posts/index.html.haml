@@ -1,0 +1,5 @@
+%h1= title 'Posts'
+
+= render collection
+
+%nav.pagination= will_paginate collection, :container => false

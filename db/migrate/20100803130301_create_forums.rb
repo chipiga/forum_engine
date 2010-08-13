@@ -5,8 +5,8 @@ class CreateForums < ActiveRecord::Migration
       t.text :description
       t.string :state
       # t.string :kind
-      t.integer :topics_count
-      t.integer :posts_count
+      t.integer :topics_count, :default => 0
+      t.integer :posts_count, :default => 0
 
       t.timestamps
     end

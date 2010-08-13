@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20100810202326) do
     t.string   "name"
     t.text     "description"
     t.string   "state"
-    t.integer  "topics_count"
-    t.integer  "posts_count"
+    t.integer  "topics_count", :default => 0
+    t.integer  "posts_count",  :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20100810202326) do
     t.integer  "topic_id"
     t.integer  "user_id"
     t.text     "body"
-    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20100810202326) do
     t.integer  "forum_id"
     t.string   "title"
     t.string   "state"
-    t.integer  "posts_count"
+    t.integer  "posts_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20100810202326) do
     t.datetime "updated_at"
     t.string   "username",                            :default => "", :null => false
     t.integer  "roles",                               :default => 0
+    t.integer  "posts_count",                         :default => 0
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

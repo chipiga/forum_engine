@@ -1,4 +1,7 @@
 module ForumEngine
+  mattr_accessor :per_page
+  @@per_page = 20
+
   module Models
     extend ActiveSupport::Autoload
 
@@ -10,6 +13,9 @@ module ForumEngine
   module Controllers
     extend ActiveSupport::Autoload
 
+    autoload :Auth
+    autoload :Paginate
+    autoload :Slug
     autoload :ForumsController
     autoload :TopicsController
     autoload :PostsController

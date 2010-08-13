@@ -1,0 +1,12 @@
+= semantic_form_for resource do |form|
+  = form.inputs do
+    = form.input :forum
+    = form.input :title
+    - if resource.new_record?
+      = form.semantic_fields_for :posts do |post|
+        = post.input :body
+      / = form.inputs :body, :for => :posts
+    / = form.input :state, :as => :select, :collection => ['open', 'closed', 'sticky'], :include_blank => false # TODO!
+  = form.buttons do
+    = form.commit_button
+    %li.cancel= link_to 'Cancel', resource

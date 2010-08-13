@@ -2,8 +2,9 @@ ForumEngine::Application.routes.draw do
   devise_for :users
 
   resources :forums
-  resources :topics
-  resources :posts
+  resources :topics do
+    resources :posts # TODO except?
+  end
 
   root :to => redirect{|p, env| '/forums'} # "home#index"
 

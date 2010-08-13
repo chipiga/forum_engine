@@ -1,0 +1,8 @@
+= semantic_form_for resource do |form|
+  = form.inputs do
+    = form.input :name
+    = form.input :description
+    = form.input :state, :as => :select, :collection => ['public', 'private'], :include_blank => false
+  = form.buttons do
+    = form.commit_button
+    %li.cancel= link_to 'Cancel', resource

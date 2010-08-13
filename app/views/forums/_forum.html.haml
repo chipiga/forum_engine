@@ -1,9 +1,9 @@
 %article
   %header
-    %h3= link_to resource.title, resource
-  %section= resource.description
+    %h3= link_to forum.name, forum
+  %section= forum.description
   %footer
     %aside
-      %time{ :datetime => resource.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
-        = l resource.created_at, :format => :long
-      / = resource.user.username.capitalize
+      %time{ :datetime => forum.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
+        = l forum.created_at, :format => :long
+      / = forum.user.username.capitalize

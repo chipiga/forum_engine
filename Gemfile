@@ -22,16 +22,16 @@ group :test do
 end
 
 gem 'haml', '>= 3.0.16'
-# gem 'compass', '>= 0.10.4'
+gem 'compass', '>= 0.10.4'
 gem 'has_scope', '>= 0.5.0'
 gem 'inherited_resources', '>= 1.1.2'
 gem 'devise', '>= 1.1.1'
 gem 'cancan', '>= 1.3.2'
 gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branch => 'rails3'
-# gem 'visit_card', :git => 'git://github.com/chipiga/visit_card.git' # :path => '~/code/visit_card'
 gem 'clean-bitmask-attribute', '>= 2.0.0', :require => 'bitmask-attribute' #, :path => '~/code/bitmask-attribute', :git => 'git://github.com/chipiga/bitmask-attribute.git', :branch => 'clean'
 gem 'will_paginate', '>= 3.0.pre2'
 gem 'meta-tags', '>= 1.2.3', :require => 'meta_tags'
+# gem 'visit_card', :git => 'git://github.com/chipiga/visit_card.git' # :path => '~/code/visit_card'
 # gem 'mini_magick'
 # gem 'carrierwave', :git => 'git://github.com/chipiga/carrierwave.git' #, :path => '~/code/carrierwave'
 # gem 'aws'
