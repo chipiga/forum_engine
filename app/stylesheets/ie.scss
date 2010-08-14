@@ -1,4 +1,5 @@
 @import "blueprint";
+@import "partials/ie7";
 
 // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
 // +blueprint-ie
@@ -6,6 +7,7 @@
 //Recommended Blueprint configuration with scoping and semantic layout:
 body.bp {
   @include blueprint-ie(true);
+  @include ie7;
   // Note: Blueprint centers text to fix IE6 container centering.
   // This means all your texts will be centered under all version of IE by default.
   // If your container does not have the .container class, don't forget to restore

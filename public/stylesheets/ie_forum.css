@@ -1,0 +1,9 @@
+/* line 7, ../../app/stylesheets/partials/_ie7.scss */
+body.bp section#content article section aside {
+  display: inline;
+  float: left;
+}
+/* line 10, ../../app/stylesheets/partials/_ie7.scss */
+body.bp section#content article section .post {
+  margin-left: 200px;
+}

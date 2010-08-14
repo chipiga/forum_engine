@@ -1,0 +1,64 @@
+@import "partials/inline-list";
+//@import "compass/utilities/general/min";
+
+@mixin content {
+  section#content {
+    table {
+      td, th {
+        vertical-align: text-top;
+      }
+      .title {
+        width: 60%;
+      }
+      .topics_count, .posts_count, .views_count {
+        text-align: center;
+      }
+    }
+    
+    article {
+      width: auto;  
+      min-width: 1000px;
+
+      margin: 10px;
+
+      header {
+        background-color: $blueprint_background_color;
+        padding: 5px;
+        a.number {
+          @include float-right;
+        } 
+      }
+
+      section {
+        display: table;
+        aside {
+          background-color: $blueprint_background_color;
+//          @include float-left;
+          width: 200px;
+          padding: 5px;
+          display: table-cell;
+//          @include min-height(200px);
+        }
+        .post {
+//          margin-left: 200px;
+          padding: 5px;
+          display: table-cell;
+        }
+        @include clearfix;
+      }
+
+      footer {
+        background-color: $blueprint_background_color;
+        padding: 5px;
+        @include clearfix;
+      }
+      
+      @include clearfix;
+    }
+
+    ul.controls {
+      @include pipe-delimited-list;
+      @include float-right;
+    }
+  }
+}

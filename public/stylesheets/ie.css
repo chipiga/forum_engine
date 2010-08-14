@@ -1,4 +1,4 @@
-/* line 7, ../../app/stylesheets/ie.scss */
+/* line 8, ../../app/stylesheets/ie.scss */
 body.bp {
   text-align: center;
 }
@@ -86,4 +86,13 @@ body.bp select {
 body.bp button {
   position: relative;
   top: 0.25em;
+}
+/* line 7, ../../app/stylesheets/partials/_ie7.scss */
+body.bp section#content article section aside {
+  display: inline;
+  float: left;
+}
+/* line 10, ../../app/stylesheets/partials/_ie7.scss */
+body.bp section#content article section .post {
+  margin-left: 200px;
 }

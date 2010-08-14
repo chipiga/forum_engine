@@ -1,6 +1,6 @@
 module ForumEngine
   mattr_accessor :per_page
-  @@per_page = 20
+  @@per_page = 2
 
   module Models
     extend ActiveSupport::Autoload

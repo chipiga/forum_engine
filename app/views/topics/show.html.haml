@@ -1,3 +1,7 @@
 %h1= resource.title
-= render :partial => 'posts/post', :collection => resource.posts.ordered
-= render :partial => 'posts/form', :locals => { :resource => [resource, Post.new], :return_url => request.fullpath }
+- posts = resource.posts.ordered.paginate(:page => params[:page], :per_page => ForumEngine.per_page)
+= render posts
+
+%nav.pagination= will_paginate posts, :container => false
+
+= render :partial => 'posts/form', :locals => { :resource => Post.new, :return_url => request.fullpath } # TODO remove return_url?

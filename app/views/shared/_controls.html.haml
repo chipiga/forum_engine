@@ -1,0 +1,5 @@
+- if can? :edit, resource
+  %ul.controls
+    %li= link_to 'Edit', polymorphic_path(resource, :action => 'edit')
+    - if can? :delete, resource
+      %li= link_to 'Delete', polymorphic_path(resource), :method => :delete, :confirm => "Are you sure?"

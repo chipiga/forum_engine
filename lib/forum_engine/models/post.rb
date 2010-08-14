@@ -15,6 +15,7 @@ module ForumEngine
       end
 
       module InstanceMethods
+        # TODO remove topic if post is first
       end
 
       module ClassMethods

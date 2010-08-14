@@ -1,0 +1,158 @@
+/* line 4, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 6, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  font-size: 100.01%;
+}
+
+/* line 16, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+/* line 45, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 20, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 7, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content table td, body.bp section#content table th {
+  vertical-align: text-top;
+}
+/* line 10, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content table .title {
+  width: 60%;
+}
+/* line 13, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content table .topics_count, body.bp section#content table .posts_count, body.bp section#content table .views_count {
+  text-align: center;
+}
+/* line 18, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article {
+  width: auto;
+  min-width: 1000px;
+  margin: 10px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 24, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article header {
+  background-color: #eeeeee;
+  padding: 5px;
+}
+/* line 27, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article header a.number {
+  display: inline;
+  float: right;
+}
+/* line 32, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article section {
+  display: table;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 34, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article section aside {
+  background-color: #eeeeee;
+  width: 200px;
+  padding: 5px;
+  display: table-cell;
+}
+/* line 42, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article section .post {
+  padding: 5px;
+  display: table-cell;
+}
+/* line 50, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article footer {
+  background-color: #eeeeee;
+  padding: 5px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 59, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content ul.controls {
+  list-style-type: none;
+  display: inline;
+  float: right;
+}
+/* line 5, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/compass/stylesheets/compass/utilities/lists/_inline-list.scss */
+body.bp section#content ul.controls, body.bp section#content ul.controls li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+/* line 6, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content ul.controls li:after {
+  content: " | ";
+}
+/* line 9, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content ul.controls li:last-child:after, body.bp section#content ul.controls li.last:after {
+  content: "";
+}

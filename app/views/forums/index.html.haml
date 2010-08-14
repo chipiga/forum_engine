@@ -1,11 +1,11 @@
 %h1= title 'Forums'
 
-%table
+%table{ :cellspacing => 0 }
   %tr
-    %th Forum
-    %th Topics
-    %th Posts
-    %th Activity
+    %th.title Forum
+    %th.topics_count Topics
+    %th.posts_count Posts
+    %th.activity Activity
   = render collection
 
 / %nav.pagination= will_paginate collection, :container => false

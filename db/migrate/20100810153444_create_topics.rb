@@ -6,6 +6,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :state
       # t.string :type
       t.integer :posts_count, :default => 0
+      t.integer :views_count, :default => 0
       # TODO last post date ?
 
       t.timestamps

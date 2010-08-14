@@ -9,11 +9,11 @@ class Ability
       can :manage, :all
     else
       if user.roles?(:user)
-        can :create, Post
-        can :update, Post, :user_id => user.id
+        can :create, Post, Topic
+        can [:update, :destroy], [Post, Topic], :user_id => user.id
       end
       if user.roles?(:moderator)
-        can [:read, :update], [Forum, Topic, Post]
+        can [:read, :update, :destroy], [Forum, Topic, Post]
       end
     end
   end

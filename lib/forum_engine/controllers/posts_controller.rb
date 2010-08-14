@@ -4,6 +4,7 @@ module ForumEngine
       extend ActiveSupport::Concern
 
       included do
+        actions :all, :except => [:show, :index] #:new, :edit, :create, :update, :destroy
         respond_to :html
         belongs_to :topic
 
@@ -14,11 +15,19 @@ module ForumEngine
 
       module InstanceMethods
         def create
-          create!{ params[:post][:return_url] || collection_path }
+          # create!{ request.env["HTTP_REFERER"] || params[:post][:return_url] || collection_path }
+          create!{ request.env["HTTP_REFERER"] || collection_path } # TODO add anchor "##{id}"
         end
 
         def update
-          update!{ params[:post][:return_url] || collection_path }
+          # update!{ params[:post][:return_url] || collection_path }
+          update!{ collection_path }
+        end
+
+        # TODO how to pass return_url ?
+        def destroy
+          # destroy!{ request.env["HTTP_REFERER"] || params[:post][:return_url] || collection_path }
+          destroy!{ request.env["HTTP_REFERER"] || collection_path }
         end
       end
 

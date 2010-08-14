@@ -2,7 +2,7 @@
 @import "partials/inline-list";
 
 @mixin layout {
-  body > * {
+  #container > * {
     padding: 10px 10px 10px 20px;
   }
 
@@ -19,6 +19,7 @@
   }
 
   section#content {
+    //test
   }
 
   footer#footer {
@@ -26,5 +27,4 @@
     padding: 20px 0px;
     background-color: $blueprint_background_color;
   }
-
 }

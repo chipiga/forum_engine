@@ -1,5 +1,11 @@
 %h1= title 'Topics'
 
-= render collection
+%table{ :cellspacing => 0 }
+  %tr
+    %th.title Topic
+    %th.posts_count Posts
+    %th.views_count Views
+    %th.activity Activity
+  = render collection
 
 %nav.pagination= will_paginate collection, :container => false

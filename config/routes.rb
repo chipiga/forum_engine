@@ -1,9 +1,12 @@
 ForumEngine::Application.routes.draw do
   devise_for :users
 
+  # TODO make id constraint more flexible
+  match "forums/:id(/page/:page)(.:format)" => "forums#show", :constraints => { :page => /\d+/, :id => /\d+[-a-z0-9]+/ }, :defaults => { :page => 1 }, :via => :get
   resources :forums
+  match "topics/:id(/page/:page)(.:format)" => "topics#show", :constraints => { :page => /\d+/, :id => /\d+[-a-z0-9]+/ }, :defaults => { :page => 1 }, :via => :get
   resources :topics do
-    resources :posts # TODO except?
+    resources :posts, :except => [:show, :index] # :only => [:new, :edit, :create, :update, :destroy]
   end
 
   root :to => redirect{|p, env| '/forums'} # "home#index"

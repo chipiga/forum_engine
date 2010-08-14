@@ -1,6 +1,7 @@
 require 'forum_engine'
 
-# Rails Monkey Patch
+# TODO remove?
+# Rails Monkey Patch to force count work with group
 module ActiveRecord
   class Relation
     def empty?

@@ -1,0 +1,6 @@
+@import "blueprint";
+@import "partials/ie7";
+
+body.bp {
+  @include ie7;
+}

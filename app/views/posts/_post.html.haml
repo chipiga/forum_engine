@@ -1,9 +1,19 @@
 %article
   %header
-    %h3
-  %section= post.body
-  %footer
+    %time{ :datetime => post.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
+      = l post.created_at, :format => :long
+    %a.number{ :name => post.id, :href => "##{post.id}"}= "##{post_counter + ForumEngine.per_page * (params[:page].to_i - 1) + 1}"
+  %section
     %aside
-      %time{ :datetime => post.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
-        = l post.created_at, :format => :long
-      = post.user.username.capitalize
+      %strong= post.user.username
+      %p
+        Registered:
+        %time{ :datetime => post.user.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
+          = l post.user.created_at, :format => :long
+        %br
+        Posts:
+        = post.user.posts_count
+    .post
+      = simple_format post.body
+  %footer
+    = render 'shared/controls', :resource => [post.topic, post]

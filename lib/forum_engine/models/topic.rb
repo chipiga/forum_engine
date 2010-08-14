@@ -24,10 +24,12 @@ module ForumEngine
         def to_param
           "#{id}-#{slug}"
         end
-        
+
         def first_post
           posts.first
         end
+
+        def views_count; 0; end # TODO remove this gap
       end
 
       module ClassMethods

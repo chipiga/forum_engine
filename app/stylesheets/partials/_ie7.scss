@@ -1,0 +1,16 @@
+@mixin ie7 {
+  section#content {
+    article {
+      section {
+        //TODO impove IE7 equal height columns
+        //http://buildinternet.com/2009/07/four-methods-to-create-equal-height-columns/
+        aside {
+          @include float-left;
+        }
+        .post {
+          margin-left: 200px;
+        }
+      }
+    }
+  }
+}

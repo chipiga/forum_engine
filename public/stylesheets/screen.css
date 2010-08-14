@@ -106,7 +106,7 @@ a img {
   margin: 0 -0.2em;
 }
 
-/* line 12, ../../app/stylesheets/partials/_page.scss */
+/* line 8, ../../app/stylesheets/partials/_page.scss */
 body.bp {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -420,15 +420,15 @@ body.bp .removed {
   background: #990000;
   color: white;
 }
-/* line 5, ../../app/stylesheets/partials/layout.scss */
-body.bp body > * {
+/* line 5, ../../app/stylesheets/partials/_layout.scss */
+body.bp #container > * {
   padding: 10px 10px 10px 20px;
 }
-/* line 9, ../../app/stylesheets/partials/layout.scss */
+/* line 9, ../../app/stylesheets/partials/_layout.scss */
 body.bp header#header {
   background-color: #eeeeee;
 }
-/* line 12, ../../app/stylesheets/partials/layout.scss */
+/* line 12, ../../app/stylesheets/partials/_layout.scss */
 body.bp header#header nav ul {
   list-style-type: none;
   margin: 10px;
@@ -447,20 +447,95 @@ body.bp header#header nav ul li:after {
 body.bp header#header nav ul li:last-child:after, body.bp header#header nav ul li.last:after {
   content: "";
 }
-/* line 17, ../../app/stylesheets/partials/layout.scss */
+/* line 17, ../../app/stylesheets/partials/_layout.scss */
 body.bp header#header nav#user {
   display: inline;
   float: right;
 }
-/* line 18, ../../app/stylesheets/partials/layout.scss */
+/* line 18, ../../app/stylesheets/partials/_layout.scss */
 body.bp header#header nav#menu {
   text-align: center;
 }
-/* line 24, ../../app/stylesheets/partials/layout.scss */
+/* line 25, ../../app/stylesheets/partials/_layout.scss */
 body.bp footer#footer {
   text-align: center;
   padding: 20px 0px;
   background-color: #eeeeee;
+}
+/* line 7, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content table td, body.bp section#content table th {
+  vertical-align: text-top;
+}
+/* line 10, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content table .title {
+  width: 60%;
+}
+/* line 13, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content table .topics_count, body.bp section#content table .posts_count, body.bp section#content table .views_count {
+  text-align: center;
+}
+/* line 18, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article {
+  width: auto;
+  min-width: 1000px;
+  margin: 10px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 24, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article header {
+  background-color: #eeeeee;
+  padding: 5px;
+}
+/* line 27, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article header a.number {
+  display: inline;
+  float: right;
+}
+/* line 32, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article section {
+  display: table;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 34, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article section aside {
+  background-color: #eeeeee;
+  width: 200px;
+  padding: 5px;
+  display: table-cell;
+}
+/* line 42, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article section .post {
+  padding: 5px;
+  display: table-cell;
+}
+/* line 50, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content article footer {
+  background-color: #eeeeee;
+  padding: 5px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 59, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content ul.controls {
+  list-style-type: none;
+  display: inline;
+  float: right;
+}
+/* line 5, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/compass/stylesheets/compass/utilities/lists/_inline-list.scss */
+body.bp section#content ul.controls, body.bp section#content ul.controls li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+/* line 6, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content ul.controls li:after {
+  content: " | ";
+}
+/* line 9, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content ul.controls li:last-child:after, body.bp section#content ul.controls li.last:after {
+  content: "";
 }
 
 /* line 4, ../../app/stylesheets/partials/_form.scss */
