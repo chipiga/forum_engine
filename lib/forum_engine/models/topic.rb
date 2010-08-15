@@ -9,10 +9,11 @@ module ForumEngine
         belongs_to :forum, :counter_cache => true
         has_many :posts, :dependent => :destroy
         
-        delegate :user, :user=, :to => :first_post
+        delegate :user, :user=, :to => :first_post # TODO posts.first ? lambda ?
 
         validates :title, :forum, :presence => true
 
+        scope :by_forum, lambda{|forum_id| where(:forum_id => forum_id)}
         scope :ordered, joins(:posts).group('topics.id').order('posts.created_at DESC')
 
         accepts_nested_attributes_for :posts

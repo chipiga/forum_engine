@@ -5,6 +5,7 @@ module ForumEngine
 
       included do
         respond_to :html
+        actions :all, :except => :show
 
         include ForumEngine::Controllers::Auth
         include ForumEngine::Controllers::Slug

@@ -1,6 +1,4 @@
 = semantic_form_for [@topic, resource] do |form|
   = form.inputs do
     = form.input :body, :label => "Post Reply"
-    / - if return_url # TODO remove this
-    /   = form.input :return_url, :as => :hidden, :value => return_url
   = form.buttons

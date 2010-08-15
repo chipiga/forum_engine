@@ -151,6 +151,7 @@ DEPENDENCIES
   factory_girl_rails
   formtastic!
   haml (>= 3.0.16)
+  has_scope (>= 0.5.0)
   inherited_resources (>= 1.1.2)
   jeweler
   meta-tags (>= 1.2.3)

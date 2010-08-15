@@ -23,7 +23,7 @@ end
 
 gem 'haml', '>= 3.0.16'
 gem 'compass', '>= 0.10.4'
-# gem 'has_scope', '>= 0.5.0'
+gem 'has_scope', '>= 0.5.0'
 gem 'inherited_resources', '>= 1.1.2'
 gem 'devise', '>= 1.1.1'
 gem 'cancan', '>= 1.3.2'

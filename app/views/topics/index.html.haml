@@ -1,4 +1,4 @@
-%h1= title 'Topics'
+%h1= title @forum ? @forum.name : 'Topics'
 
 %table{ :cellspacing => 0 }
   %tr

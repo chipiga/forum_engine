@@ -1,5 +1,7 @@
-%h1= title 'Posts'
+%h1= title @topic ? @topic.title : 'Posts'
 
 = render collection
 
 %nav.pagination= will_paginate collection, :container => false
+
+= render :partial => 'posts/form', :locals => { :resource => Post.new }

@@ -4,29 +4,28 @@ module ForumEngine
       extend ActiveSupport::Concern
 
       included do
-        actions :all, :except => [:show, :index] #:new, :edit, :create, :update, :destroy
         respond_to :html
-        belongs_to :topic
+        actions :all, :except => :show
+        has_scope :by_topic, :only => :index, :as => :id
+        belongs_to :topic, :optional => true
 
         include ForumEngine::Controllers::Auth
-        before_filter :build_resource, lambda{ resource.user = current_user }, :only => :create # TODO Refactor
+        before_filter lambda{ build_resource; resource.user = current_user }, :only => :create # TODO Refactor
+        before_filter :build_resource, lambda{ @topic = Topic.find(params[:id]) if params[:id] }, :only => :index
         include ForumEngine::Controllers::Paginate
       end
 
       module InstanceMethods
+        # TODO calc link to last post
         def create
-          # create!{ request.env["HTTP_REFERER"] || params[:post][:return_url] || collection_path }
           create!{ request.env["HTTP_REFERER"] || collection_path } # TODO add anchor "##{id}"
         end
 
         def update
-          # update!{ params[:post][:return_url] || collection_path }
           update!{ collection_path }
         end
 
-        # TODO how to pass return_url ?
         def destroy
-          # destroy!{ request.env["HTTP_REFERER"] || params[:post][:return_url] || collection_path }
           destroy!{ request.env["HTTP_REFERER"] || collection_path }
         end
       end

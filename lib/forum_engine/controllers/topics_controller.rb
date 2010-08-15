@@ -5,11 +5,14 @@ module ForumEngine
 
       included do
         respond_to :html
+        actions :all, :except => :show
+        has_scope :by_forum, :only => :index, :as => :id
 
         include ForumEngine::Controllers::Auth
         # before_filter :build_resource, lambda{ params['topic']['posts_attributes']['0']['user_id'] = current_user.id; resource.state = 'open' }, :only => :create
         before_filter lambda{ build_resource; resource.user = current_user; resource.state = 'open' }, :only => :create # TODO Refactor
-        before_filter :build_resource, lambda{ resource.posts.build }, :only => :new
+        before_filter lambda{ build_resource; resource.posts.build }, :only => :new # before_filter :build_resource, lambda{ resource.posts.build }, :only => :new
+        before_filter :build_resource, lambda{ @forum = Forum.find(params[:id]) if params[:id] }, :only => :index
         include ForumEngine::Controllers::Slug
         include ForumEngine::Controllers::Paginate
       end

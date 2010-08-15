@@ -11,6 +11,7 @@ module ForumEngine
 
         validates :body, :presence => true
 
+        scope :by_topic, lambda{|topic_id| where(:topic_id => topic_id)}
         scope :ordered, order('id ASC')
       end
 
