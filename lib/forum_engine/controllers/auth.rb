@@ -6,7 +6,8 @@ module ForumEngine
 
       included do
         before_filter :authenticate_user!, :except => [:index, :show]
-        authorize_resource
+        load_and_authorize_resource :except => [:create, :destroy] # TODO redo this gap!
+        # authorize_resource
       end
     end
   end
