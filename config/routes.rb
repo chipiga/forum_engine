@@ -3,15 +3,20 @@ ForumEngine::Application.routes.draw do
 
   # TODO make id constraint more flexible
   match "forums/:id(/page/:page)(.:format)" => "topics#index", :constraints => { :page => /\d+/, :id => /\d+[-a-z0-9]+/ }, :defaults => { :page => 1 }, :via => :get
-  resources :forums, :except => :show
   match "topics(/page/:page)(.:format)" => "topics#index", :constraints => { :page => /\d+/ }, :defaults => { :page => 1 }, :via => :get
-  match "topics/:id(/page/:page)(.:format)" => "posts#index", :constraints => { :page => /\d+/, :id => /\d+[-a-z0-9]+/ }, :defaults => { :page => 1 }, :via => :get
-  match "topics/:id/posts(.:format)" => redirect{|p, env| "/topics/#{p[:id]}"}, :via => :get # TODO ?
-  resources :topics, :except => :show do
-    resources :posts, :except => :show
+  match "topics/:id(/page/:page)(.:format)" => "posts#index", :as => 'posts_collection', :constraints => { :page => /\d+/, :id => /\d+[-a-z0-9]+/ }, :defaults => { :page => 1 }, :via => :get
+  # match "topics/:id/posts(.:format)" => redirect{|p, env| "/topics/#{p[:id]}"}, :via => :get # TODO remove
+  resources :forums, :except => :show do
+    resources :topics, :only => [:new, :create]
   end
+  resources :topics, :except => :show do
+    resources :posts, :only => [:new, :create]
+  end
+  match "posts(/page/:page)(.:format)" => "posts#index", :constraints => { :page => /\d+/ }, :defaults => { :page => 1 }, :via => :get
+  resources :posts, :except => [:new, :create, :show]
 
-  root :to => redirect{|p, env| '/forums'} # "home#index"
+  # root :to => redirect{|p, env| '/forums'} # "home#index"
+  root :to => "forums#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
