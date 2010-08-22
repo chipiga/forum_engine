@@ -137,22 +137,60 @@ body.bp section#content article footer {
   *zoom: 1;
 }
 /* line 59, ../../app/stylesheets/partials/_content.scss */
-body.bp section#content ul.controls {
+body.bp section#content nav.controls ul {
   list-style-type: none;
   display: inline;
   float: right;
 }
 /* line 5, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/compass/stylesheets/compass/utilities/lists/_inline-list.scss */
-body.bp section#content ul.controls, body.bp section#content ul.controls li {
+body.bp section#content nav.controls ul, body.bp section#content nav.controls ul li {
   margin: 0px;
   padding: 0px;
   display: inline;
 }
 /* line 6, ../../app/stylesheets/partials/_inline-list.scss */
-body.bp section#content ul.controls li:after {
+body.bp section#content nav.controls ul li:after {
   content: " | ";
 }
 /* line 9, ../../app/stylesheets/partials/_inline-list.scss */
-body.bp section#content ul.controls li:last-child:after, body.bp section#content ul.controls li.last:after {
+body.bp section#content nav.controls ul li:last-child:after, body.bp section#content nav.controls ul li.last:after {
+  content: "";
+}
+/* line 63, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content nav.breadcrumb ul {
+  list-style-type: none;
+}
+/* line 5, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/compass/stylesheets/compass/utilities/lists/_inline-list.scss */
+body.bp section#content nav.breadcrumb ul, body.bp section#content nav.breadcrumb ul li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+/* line 15, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content nav.breadcrumb ul li:after {
+  content: " → ";
+}
+/* line 18, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content nav.breadcrumb ul li:last-child:after, body.bp section#content nav.breadcrumb ul li.last:after {
+  content: "";
+}
+/* line 66, ../../app/stylesheets/partials/_content.scss */
+body.bp section#content nav#menu ul {
+  list-style-type: none;
+  display: inline;
+  float: right;
+}
+/* line 5, ../../../../.rvm/gems/ruby-1.9.2-head@rails3/gems/compass-0.10.4/frameworks/compass/stylesheets/compass/utilities/lists/_inline-list.scss */
+body.bp section#content nav#menu ul, body.bp section#content nav#menu ul li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+/* line 6, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content nav#menu ul li:after {
+  content: " | ";
+}
+/* line 9, ../../app/stylesheets/partials/_inline-list.scss */
+body.bp section#content nav#menu ul li:last-child:after, body.bp section#content nav#menu ul li.last:after {
   content: "";
 }

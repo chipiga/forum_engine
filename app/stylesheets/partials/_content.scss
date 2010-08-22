@@ -56,9 +56,17 @@
       @include clearfix;
     }
 
-    ul.controls {
+    nav.controls ul {
       @include pipe-delimited-list;
       @include float-right;
     }
+    nav.breadcrumb ul {
+      @include arrow-delimited-list;
+    }
+    nav#menu ul {
+      @include pipe-delimited-list;
+      @include float-right;
+    }
+
   }
 }

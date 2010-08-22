@@ -8,3 +8,12 @@
     &:last-child, &.last {
       &:after {
         content: ""; } } } }
+
+@mixin arrow-delimited-list {
+  @include inline-list;
+  li {
+    &:after {
+      content: " → "; }
+    &:last-child, &.last {
+      &:after {
+        content: ""; } } } }
