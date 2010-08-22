@@ -10,13 +10,16 @@ module ForumEngine
         belongs_to :user, :counter_cache => true
 
         validates :body, :presence => true
+        
+        # TODO optimize?
+        after_create {|post| ::Forum.increment_counter('posts_count', post.topic.forum.id)}
+        after_destroy {|post| ::Forum.decrement_counter('posts_count', post.topic.forum.id)}
 
         scope :by_topic, lambda{|topic_id| where(:topic_id => topic_id)}
         scope :ordered, order('id ASC')
       end
 
       module InstanceMethods
-        # TODO remove topic if post is first
       end
 
       module ClassMethods

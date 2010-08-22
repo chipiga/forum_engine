@@ -3,7 +3,6 @@ module ForumEngine
     module Forum
       extend ActiveSupport::Concern
 
-      # TODO posts_count
       included do
         attr_accessible :name, :description, :state
 
@@ -19,6 +18,10 @@ module ForumEngine
         def slug; name.parameterize; end
         def to_param
           "#{id}-#{slug}"
+        end
+
+        def last_topic
+          @last_topic ||= topics.activity.first
         end
       end
 

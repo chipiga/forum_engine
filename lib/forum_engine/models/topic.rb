@@ -4,17 +4,19 @@ module ForumEngine
       extend ActiveSupport::Concern
 
       included do
-        attr_accessible :title, :forum_id, :posts_attributes
+        attr_accessible :title, :posts_attributes
 
         belongs_to :forum, :counter_cache => true
         has_many :posts, :dependent => :destroy
-        
-        delegate :user, :user=, :to => :first_post # TODO posts.first ? lambda ?
 
-        validates :title, :forum, :presence => true
+        delegate :user, :user=, :to => :first_post
+
+        validates :title, :presence => true
 
         scope :by_forum, lambda{|forum_id| where(:forum_id => forum_id)}
-        scope :ordered, joins(:posts).group('topics.id').order('posts.created_at DESC')
+        scope :priority, order('priority DESC')
+        scope :activity, joins(:posts).group('topics.id').order('posts.created_at DESC')
+        scope :ordered, priority.activity # TODO not working with sqlite
 
         accepts_nested_attributes_for :posts
       end
@@ -27,10 +29,12 @@ module ForumEngine
         end
 
         def first_post
-          posts.first
+          @first_post ||= posts.first
         end
 
-        def views_count; 0; end # TODO remove this gap
+        def last_post
+          @last_post ||= posts.ordered.last
+        end
       end
 
       module ClassMethods
