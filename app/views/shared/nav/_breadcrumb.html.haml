@@ -1,0 +1,9 @@
+%nav.breadcrumb
+  %ul
+    %li= link_to 'Home', root_path
+    %li= link_to 'Forums', forums_path
+    - if resource_class == Topic && resource.forum # TODO refactor
+      %li= resource.forum.name
+    - elsif resource_class == Post && resource.topic
+      %li= link_to resource.topic.forum.name, forum_path(resource.topic.forum)
+      %li= resource.topic.title

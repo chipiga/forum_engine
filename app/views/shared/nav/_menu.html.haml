@@ -1,6 +1,9 @@
 %nav#menu
   %ul
-    - if can? :create, Forum.new
+    - if can? :create, Forum
       %li= link_to 'New Forum', new_forum_path
-    - if can? :create, Topic.new
-      %li= link_to 'New Topic', new_topic_path
+    - if can?(:create, Topic) # TODO refactor
+      - if resource_class == Topic && resource.forum
+        %li= link_to 'New Topic', new_forum_topic_path(resource.forum)
+      - elsif resource_class == Post && resource.topic
+        %li= link_to 'New Topic', new_forum_topic_path(resource.topic.forum)
