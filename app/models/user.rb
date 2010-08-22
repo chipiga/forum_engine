@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  # TODO count posts, topics?
   has_many :posts, :dependent => :destroy
 
   validates_presence_of   :username

@@ -1,0 +1,27 @@
+= Follow this steps to run:
+
+* git clone git://github.com/chipiga/forum_engine.git
+* cd forum_engine
+* bundle install
+* rake db:migrate
+* rake db:seed
+
+Then you can run "rails s" and login to system as:
+* user:user
+* moderator:moderator
+* admin:admin
+
+- Features:
+* Only admin can create forums.
+* Any user can create topic and post to it.
+* Any user can edit own topics and edit/delete own posts.
+* Moderator can [edit, delete] any [forum, topic, post].
+* Topics with latest activity displayed on top.
+* Direct link to post in topic through page calculation and anchor.
+* Counts: user posts, posts in topic, posts in forum, topic views
+* Unable to remove first post in topic.
+
+- Uncomplete features:
+* Unable post to closed topic - no interface. Set topic.state = 'closed' from console. Admin can post anyway.
+* Sticky topic is displayed on top of others - no interface. Set topic.priority = 10 from console. However this feature depends on db and not working with sqlite.
+* Unable to move topics between forums by arhitecture. Need special interface for admin/moderator.
