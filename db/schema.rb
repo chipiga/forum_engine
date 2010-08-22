@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20100810202326) do
   create_table "forums", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "state"
+    t.string   "state",        :default => "public"
     t.integer  "topics_count", :default => 0
     t.integer  "posts_count",  :default => 0
     t.datetime "created_at"
@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(:version => 20100810202326) do
   create_table "topics", :force => true do |t|
     t.integer  "forum_id"
     t.string   "title"
-    t.string   "state"
+    t.string   "state",       :default => "open"
+    t.integer  "priority",    :default => 0
     t.integer  "posts_count", :default => 0
+    t.integer  "views_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

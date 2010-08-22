@@ -15,3 +15,6 @@ u = User.create(:username => 'moderator', :email => 'moderator@email.com', :pass
 2.times{ u.confirm! }
 u.roles << 'moderator'
 u.save(false)
+
+u = User.create(:username => 'user', :email => 'user@email.com', :password => 'user')
+2.times{ u.confirm! }

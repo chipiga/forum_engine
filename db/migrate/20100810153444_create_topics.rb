@@ -3,8 +3,9 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.references :forum
       t.string :title
-      t.string :state
+      t.string :state, :default => 'open'
       # t.string :type
+      t.integer :priority, :default => 0
       t.integer :posts_count, :default => 0
       t.integer :views_count, :default => 0
       # TODO last post date ?

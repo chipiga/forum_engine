@@ -3,7 +3,7 @@ class CreateForums < ActiveRecord::Migration
     create_table :forums do |t|
       t.string :name
       t.text :description
-      t.string :state
+      t.string :state, :default => 'public'
       # t.string :kind
       t.integer :topics_count, :default => 0
       t.integer :posts_count, :default => 0
