@@ -1,17 +1,17 @@
 %tr
   %td.title
-    = render 'shared/controls', :resource => forum
+    = render 'shared/nav/controls', :resource => forum
     %h3= link_to forum.name, forum
     %p= forum.description
   %td.topics_count= forum.topics_count
   %td.posts_count= forum.posts_count
   %td.activity
-    - if last_topic = forum.topics.ordered.first
-      = link_to last_topic.title, last_topic
+    - if forum.last_topic
+      = link_to forum.last_topic.title, forum.last_topic
       by
-      = last_topic.user.username
+      = forum.last_topic.user.username
       at
-      %time{ :datetime => last_topic.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
-        = l last_topic.created_at, :format => :long
+      %time{ :datetime => forum.last_topic.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
+        = l forum.last_topic.created_at, :format => :long
     - else
       No activity

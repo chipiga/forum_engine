@@ -1,16 +1,14 @@
 %tr
   %td.title
-    = render 'shared/controls', :resource => topic
+    = render 'shared/nav/controls', :resource => topic
     %h3= link_to topic.title, topic
     %p= topic.user.username
   %td.posts_count= topic.posts_count
   %td.views_count= topic.views_count
   %td.activity
-    - last_post = topic.posts.ordered.last
-    / TODO link to end of topic
-    = link_to topic.title, topic
+    = link_to topic.title, collection_link(topic.last_post)
     by
-    = last_post.user.username
+    = topic.last_post.user.username
     at
-    %time{ :datetime => last_post.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
-      = l last_post.created_at, :format => :long
+    %time{ :datetime => topic.last_post.created_at.strftime('%Y-%m-%dT%H:%M:%S'), :class => 'created' }
+      = l topic.last_post.created_at, :format => :long

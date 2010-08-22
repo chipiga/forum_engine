@@ -4,4 +4,4 @@
 
 %nav.pagination= will_paginate collection, :container => false
 
-= render :partial => 'posts/form', :locals => { :resource => Post.new }
+= render :partial => 'posts/form', :locals => { :resource => Post.new } if can? :create, Post, @topic
